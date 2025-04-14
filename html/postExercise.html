@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Project Submission</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/postExercise.css">
+ </head>
+<body>
+
+<header>
+  <h1>SkillHub - Project Submission</h1>
+</header>
+
+<main>
+  <section id="submit-projects">
+    <h2>Submit Your Projects & Assignments</h2>
+    <p>Please upload your course assignments and projects here for review. We’ll get back to you shortly.</p>
+    <form action="submit_project.php" method="POST" enctype="multipart/form-data">
+      <label for="name">Full Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email Address:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="project-file">Upload File:</label>
+      <input type="file" id="project-file" name="project-file" accept=".zip,.rar,.pdf,.doc,.ppt,.pptx" required>
+
+      <button type="submit" class="submit-btn">Submit Project</button>
+    </form>
+  </section>
+</main>
+
+<footer>
+  <p>&copy; 2025 SkillHub. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

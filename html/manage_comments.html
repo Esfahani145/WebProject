@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manage Comments & Questions | SkillHub</title>
+  <link rel="stylesheet" href="../css/dashbord.css">
+</head>
+<body>
+
+<header>
+  <h1>Manage Comments & Questions</h1>
+</header>
+
+<main>
+  <section id="comments-section">
+    <h2>Comments & Questions</h2>
+    <ul id="comment-list"></ul>
+  </section>
+</main>
+
+<footer>
+  <p>&copy; 2023 SkillHub. All rights reserved.</p>
+</footer>
+
+<script>
+  // Sample comments data (replace with actual data from backend)
+  const comments = [
+    { id: 1, text: "What is the deadline for the project?", response: "" },
+    { id: 2, text: "Can you explain the last lecture again?", response: "Sure! I can help with that." },
+    { id: 3, text: "Is it possible to schedule extra office hours?", response: "" }
+  ];
+
+  const commentList = document.getElementById('comment-list');
+
+  // Function to display comments and questions
+  function displayComments() {
+    commentList.innerHTML = ''; // Clear previous list
+    comments.forEach(comment => {
+      const listItem = document.createElement('li');
+      listItem.innerHTML = `
+        <p>${comment.text}</p>
+        ${comment.response ? `<div class="response">Response: ${comment.response}</div>` : ''}
+        <input type="text" placeholder="Type your response here..." id="response-${comment.id}">
+        <button onclick="respondToComment(${comment.id})">Respond</button>
+      `;
+      commentList.appendChild(listItem);
+    });
+  }
+
+  // Function to handle responding to a comment
+  function respondToComment(commentId) {
+    const responseInput = document.getElementById(`response-${commentId}`);
+    const responseText = responseInput.value;
+
+    // Find the comment by ID and update its response
+    const comment = comments.find(c => c.id === commentId);
+    if (comment) {
+      comment.response = responseText;
+      displayComments(); // Update display
+    }
+  }
+
+  // Display comments on page load
+  displayComments();
+</script>
+
+</body>
+</html>

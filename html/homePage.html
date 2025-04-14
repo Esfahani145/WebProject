@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SkillHub</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="../css/homePage.css">
+</head>
+<body>
+
+<header>
+  <h1 class="gradient-text">
+    <span style="--i:0">S</span>
+    <span style="--i:1">k</span>
+    <span style="--i:2">i</span>
+    <span style="--i:3">l</span>
+    <span style="--i:4">l</span>
+    <span style="--i:5"> </span>
+    <span style="--i:6">H</span>
+    <span style="--i:7">u</span>
+    <span style="--i:8">b</span>
+  </h1>
+  <nav class="nav-container">
+    <ul class="nav-menu">
+      <li><a href="#courses" class="nav-item"><i data-lucide="book-open"></i> Courses</a></li>
+      <li><a href="#about" class="nav-item"><i data-lucide="info"></i> About</a></li>
+      <li><a href="#contact" class="nav-item"><i data-lucide="mail"></i> Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="hero-banner">
+  <img src="https://www.tributemedia.com/hubfs/Images/Blog%20Images/shutterstock_252081805.jpg" alt="Hero Banner"
+       class="hero-img">
+  <div class="hero-text">
+    <h2>Level up your tech skills</h2>
+    <p>Learn coding, cybersecurity, and data science with top-notch courses</p>
+    <button class="enroll-btn"><i data-lucide="rocket"></i> Get Started</button>
+  </div>
+</section>
+
+<main>
+
+  <section class="filter-section">
+    <h2><i data-lucide="filter"></i> Filter Courses</h2>
+    <label for="category">Category:</label>
+    <select id="category">
+      <option value="all">All</option>
+      <option value="web-development">Web Development</option>
+      <option value="cyber-security">Cyber Security</option>
+      <option value="data-science">Data Science</option>
+    </select>
+
+    <label for="difficulty">Difficulty Level:</label>
+    <select id="difficulty">
+      <option value="all">All</option>
+      <option value="beginner">Beginner</option>
+      <option value="intermediate">Intermediate</option>
+      <option value="advanced">Advanced</option>
+    </select>
+
+    <label for="popularity">Popularity:</label>
+    <select id="popularity">
+      <option value="all">All</option>
+      <option value="most-popular">Most Popular</option>
+      <option value="popular">Popular</option>
+    </select>
+
+    <button class="filter-btn"><i data-lucide="search"></i> Filter</button>
+  </section>
+
+  <section id="courses">
+    <h2><i data-lucide="graduation-cap"></i> Courses</h2>
+    <div class="course-card" data-category="web-development" data-difficulty="beginner">
+      <img src="../images/web.jpg"
+           alt="Web Dev" class="course-img">
+      <h3>Web Development</h3>
+      <p>Learn HTML, CSS, and JavaScript</p>
+      <p><strong>A digital certificate is issued after completing the course.</strong></p>
+      <button class="enroll-btn" onclick="enroll()"><i data-lucide="plus-circle"></i> Enroll</button>
+    </div>
+    <div class="course-card" data-category="cyber-security" data-difficulty="intermediate">
+      <img src="../images/cyber.jpg"
+           alt="Cyber Security" class="course-img">
+      <h3>Cybersecurity</h3>
+      <p>Enhance the security of your systems</p>
+      <p><strong>A digital certificate is issued after completing the course.</strong></p>
+      <button class="enroll-btn"><i data-lucide="plus-circle"></i> Enroll</button>
+    </div>
+    <div class="course-card" data-category="data-science" data-difficulty="advanced">
+      <img src="../images/data.jpg"
+           alt="Data Science" class="course-img">
+      <h3>Data Science</h3>
+      <p>Data analysis and machine learning</p>
+      <p><strong>A digital certificate is issued after completing the course.</strong></p>
+      <button class="enroll-btn"><i data-lucide="plus-circle"></i> Enroll</button>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2><i data-lucide="info"></i> About Us</h2>
+    <p>SkillHub is an online learning platform for technical skills.</p>
+  </section>
+
+  <section id="contact">
+    <h2><i data-lucide="mail"></i> Contact Us</h2>
+    <form>
+      <label for="name">Name:</label>
+      <input type="text" id="name" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" required>
+
+      <label for="message">Message:</label>
+      <textarea id="message" required></textarea>
+
+      <button type="submit" class="submit-btn"><i data-lucide="send"></i> Send</button>
+    </form>
+  </section>
+</main>
+
+<footer>
+  <p>&copy; 2023 SkillHub. All rights reserved.</p>
+</footer>
+
+<script>
+  document.querySelector('.filter-btn').addEventListener('click', function () {
+    const category = document.getElementById('category').value;
+    const difficulty = document.getElementById('difficulty').value;
+    const popularity = document.getElementById('popularity').value;
+
+    const courseCards = document.querySelectorAll('.course-card');
+
+    courseCards.forEach(card => {
+      const cardCategory = card.getAttribute('data-category');
+      const cardDifficulty = card.getAttribute('data-difficulty');
+
+      let categoryMatch = (category === 'all' || cardCategory === category);
+      let difficultyMatch = (difficulty === 'all' || cardDifficulty === difficulty);
+
+      let popularityMatch = true;
+
+      if (categoryMatch && difficultyMatch && popularityMatch) {
+        card.style.display = 'block';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  });
+
+  function enroll() {
+    window.location.href = 'courses.html';
+  }
+
+
+  lucide.createIcons();
+</script>
+
+</body>
+</html>

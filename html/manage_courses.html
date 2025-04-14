@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manage Courses | SkillHub</title>
+  <link rel="stylesheet" href="../css/dashbord.css">
+</head>
+<body>
+
+<header>
+  <h1>Manage Courses</h1>
+</header>
+
+<main>
+  <form id="course-form">
+    <label for="course-title">Course Title:</label>
+    <input type="text" id="course-title" required>
+
+    <label for="course-description">Course Description:</label>
+    <textarea id="course-description" required></textarea>
+
+    <label for="course-video">Upload Video:</label>
+    <input type="file" id="course-video" accept="video/*">
+
+    <label for="course-assignments">Assignments:</label>
+    <textarea id="course-assignments" placeholder="Enter one assignment per line"></textarea>
+
+    <label for="course-quizzes">Quizzes:</label>
+    <textarea id="course-quizzes" placeholder="Enter one quiz per line"></textarea>
+
+    <button type="submit">Save Course</button>
+  </form>
+
+  <!-- Display existing courses (this would be populated from the backend) -->
+  <section id="existing-courses">
+    <h2>Existing Courses</h2>
+    <ul id="course-list">
+      <!-- Courses will be dynamically added here -->
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <p>&copy; 2023 SkillHub. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

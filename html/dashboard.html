@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Instructor Dashboard | SkillHub</title>
+  <link rel="stylesheet" href="../css/dashbord.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+<header>
+  <h1>Instructor Dashboard</h1>
+</header>
+
+<main>
+  <div class="instructor-info">
+    <div class="instructor-image">
+      <img src="../images/Instructor.png"
+           alt="Instructor profile">
+    </div>
+    <div class="instructor-details">
+      <h2>Personal Information</h2>
+      <p><strong>Name:</strong> John Doe</p>
+      <p><strong>Email:</strong> john.doe@skillhub.com</p>
+      <p><strong>Bio:</strong> Experienced instructor with a passion for teaching web development.</p>
+    </div>
+  </div>
+
+  <section id="course-history">
+    <h2>Course History</h2>
+    <table>
+      <thead>
+      <tr>
+        <th>Course Title</th>
+        <th>Average Rating</th>
+        <th>Student Count</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>Web Development Basics</td>
+        <td>4.5</td>
+        <td>120</td>
+      </tr>
+      <tr>
+        <td>Advanced JavaScript</td>
+        <td>4.8</td>
+        <td>85</td>
+      </tr>
+      <!-- Add more rows for each course -->
+      </tbody>
+    </table>
+  </section>
+
+  <section id="student-feedback">
+    <h2>Student Feedback</h2>
+    <ul>
+      <li>"John's lectures are very clear and easy to understand."</li>
+      <li>"The assignments were challenging but helpful."</li>
+      <!-- Add more feedback items -->
+    </ul>
+  </section>
+
+  <section class="features">
+    <div class="feature-card">
+      <a href="manage_courses.html">
+        <i data-lucide="book-open" class="feature-icon"></i>
+        <h3>Course Management</h3>
+      </a>
+      <p>Upload and manage course content including videos, assignments, and quizzes.</p>
+    </div>
+    <div class="feature-card">
+      <a href="manage_exercises.html">
+        <i data-lucide="edit-2" class="feature-icon"></i>
+        <h3>Grading Student Exercises</h3>
+      </a>
+      <p>Review student submissions, grade exercises, and provide feedback.</p>
+    </div>
+    <div class="feature-card">
+      <a href="create_quiz.html">
+        <i data-lucide="clipboard" class="feature-icon"></i>
+        <h3>Create Custom Quizzes</h3>
+      </a>
+      <p>Create quizzes with multiple-choice and essay questions for your students.</p>
+    </div>
+    <div class="feature-card">
+      <a href="manage_comments.html">
+        <i data-lucide="message-circle" class="feature-icon"></i>
+        <h3>Manage Comments & Questions</h3>
+      </a>
+      <p>View and respond to student comments and questions to ensure effective communication.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>&copy; 2023 SkillHub. All rights reserved.</p>
+</footer>
+
+<script>
+  lucide.createIcons();
+</script>
+</body>
+</html>

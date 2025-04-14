@@ -1,0 +1,232 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+  color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+header, footer {
+  background: rgba(20, 20, 20, 0.85);
+  backdrop-filter: blur(10px);
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+h1.gradient-text {
+  font-size: 3rem;
+  display: flex;
+  justify-content: center;
+  gap: 0.05em;
+}
+
+h1.gradient-text span {
+  --i: 0;
+  display: inline-block;
+  background: linear-gradient(90deg, #ff6ec4, #7873f5, #4ADEDE);
+  background-size: 300% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  animation: float 2s ease-in-out infinite, shimmer 4s linear infinite;
+  animation-delay: calc(var(--i) * 0.15s); /* Delay based on index */
+  transform-origin: bottom center;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-15px) rotate(10deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(-5deg);
+  }
+  75% {
+    transform: translateY(-5px) rotate(5deg);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: 300% center;
+  }
+}
+
+.nav-container {
+  margin-top: 1rem;
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  padding: 0;
+}
+
+.nav-menu a {
+  color: #4ADEDE;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.nav-menu a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  box-shadow: 0 0 10px #4ADEDE;
+}
+
+main {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(8px);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 0.6s ease-out;
+}
+
+.filter-section {
+  margin-bottom: 2rem;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 1.5rem;
+  border-radius: 15px;
+}
+
+select, input[type="text"], input[type="email"], textarea {
+  width: 100%;
+  padding: 0.75rem;
+  margin-top: 0.25rem;
+  margin-bottom: 1rem;
+  border: 1px solid #4ADEDE;
+  border-radius: 8px;
+  background-color: #222;
+  color: #fff;
+  font-size: 1rem;
+  transition: 0.3s;
+}
+
+select:focus, input:focus, textarea:focus {
+  border-color: #ff6ec4;
+  outline: none;
+  box-shadow: 0 0 10px rgba(255, 110, 196, 0.5);
+}
+
+.course-card {
+  background: rgba(255, 255, 255, 0.06);
+  padding: 1.5rem;
+  border-radius: 15px;
+  margin: 1rem 0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease;
+}
+
+.course-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+}
+
+button {
+  padding: 10px 20px;
+  background: linear-gradient(to right, #ff6ec4, #7873f5);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s;
+}
+
+button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(255, 110, 196, 0.5);
+}
+
+form {
+  margin-top: 1rem;
+}
+
+footer p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+@media (max-width: 768px) {
+  .nav-menu {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  main {
+    margin: 1rem;
+    padding: 1.5rem;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hero-banner {
+  position: relative;
+  margin-top: 2rem;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.hero-img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  filter: brightness(0.6);
+}
+
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: translateY(-50%);
+  color: white;
+  max-width: 60%;
+}
+
+.hero-text h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.course-card img.course-img {
+  width: 80%;
+  height: auto;
+  max-width: 600px;
+  border-radius: 10px;
+  margin: 0 auto 15px auto;
+  display: block;
+}
+
+.enroll-btn i,
+.submit-btn i {
+  margin-right: 8px;
+  vertical-align: middle;
+}
